@@ -1,16 +1,29 @@
 .covid-list-con {
   overflow-y: scroll;
   padding: 10px;
-  background-color: antiquewhite;
+  margin: 10px;
+  background-color: white;
   width: 100%;
   border: 1px solid black;
-}
-
-tr {
-  background-color: salmon;
+  border-collapse: collapse;
+  /* background-color: red; */
 }
 
 th {
-  background-color: aqua;
   padding: 10px;
+  border: 1px solid #dddddd;
+  background-color: #16181d;
+}
+th h1 {
+  color: #60d8f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #2f424c;
+  color: white;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #dddddd;
 }
