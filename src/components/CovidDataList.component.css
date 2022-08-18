@@ -7,6 +7,7 @@
   border: 1px solid black;
   border-collapse: collapse;
   /* background-color: red; */
+  margin-top: 100px;
 }
 
 th {
@@ -14,7 +15,7 @@ th {
   border: 1px solid #dddddd;
   background-color: #16181d;
 }
-th h1 {
+th h2 {
   color: #60d8f9;
 }
 
@@ -26,4 +27,25 @@ tr:nth-child(odd) {
 td {
   padding: 10px;
   border: 1px solid #dddddd;
+}
+
+.search-input {
+  border: none;
+  padding: 15px;
+  height: 70px;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background-color: #16181d;
+  color: #60d8f9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.25s;
+  font-size: 20px;
+}
+
+.search-input:focus {
+  background-color: #2f424c;
+  border: 1px solid #60d8f9 !important;
+  /* margin: 5px; */
+  /* width: 98.5%; */
 }

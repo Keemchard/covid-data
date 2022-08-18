@@ -19,11 +19,14 @@ const CovidDataSpecific = ({ covidMoreDataUrl, covidCountryName }: any) => {
 
   const {
     activeCases,
-    critical,
+    ICU,
     deceased,
     infected,
     lastUpdateAtApify,
     readMe,
+    recipients,
+    stable,
+    undercare,
     recovered,
     sourceUrl,
     tested,
@@ -37,11 +40,14 @@ const CovidDataSpecific = ({ covidMoreDataUrl, covidCountryName }: any) => {
         </div>
         <div className="more-data-details">
           <p>{`Active Cases: ${activeCases}`}</p>
-          <p>{`Critical Cases: ${critical}`}</p>
+          <p>{`ICU: ${ICU}`}</p>
           <p>{`Deceased: ${deceased}`}</p>
           <p>{`Infected: ${infected}`}</p>
           <p>{`Tested: ${tested}`}</p>
           <p>{`Recovered: ${recovered}`}</p>
+          <p>{`Recipients: ${recipients}`}</p>
+          <p>{`Stable: ${stable}`}</p>
+          <p>{`underCare: ${undercare}`}</p>
           <p>{`Latest update time: ${lastUpdateAtApify}`}</p>
           <p>{`Read more: ${readMe}`}</p>
           <p>{`Source Url: ${sourceUrl}`}</p>
