@@ -1,0 +1,30 @@
+nav {
+  background-color: #16181d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+}
+
+nav .logo {
+  flex: 1;
+}
+
+/* .logo h1 {
+  margin-left: 50px;
+} */
+
+nav .menus {
+  flex: 2;
+}
+
+nav .menus ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.clink {
+  text-decoration: none;
+  color: #61dafb;
+}

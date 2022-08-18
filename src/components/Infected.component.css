@@ -1,0 +1,15 @@
+.main-infected {
+  height: 80vh;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* .infected-card {
+  background-color: antiquewhite;
+} */
+
+.case-title {
+  text-align: center;
+  margin: 20px 0;
+}
