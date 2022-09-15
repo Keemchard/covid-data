@@ -8,6 +8,7 @@ import Infected from "./components/Infected";
 import Tested from "./components/Tested";
 import Recovered from "./components/Recovered";
 import Footer from "./components/Footer";
+import Credits from "./components/Credits";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/infected" element={<Infected />} />
           <Route path="/tested" element={<Tested />} />
           <Route path="/recovered" element={<Recovered />} />
+          <Route path="/about-credits" element={<Credits />} />
         </Routes>
         <footer>
           <Footer />
