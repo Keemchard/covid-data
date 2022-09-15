@@ -36,7 +36,7 @@ const Recovered = () => {
       <div className="main-infected">
         {infectedData.map((items: any) => {
           return (
-            <div className="infected-card">
+            <div key={Math.random()} className="infected-card">
               <Card country={items.country} data={items.recovered} />
             </div>
           );
