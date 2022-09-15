@@ -1,3 +1,7 @@
+* {
+  overflow-x: hidden;
+}
+
 .covid-list-con {
   overflow-y: scroll;
   padding: 10px;
@@ -79,4 +83,56 @@ td {
   bottom: 100px;
   right: 70px;
   width: 100px;
+}
+
+@media only screen and (max-width: 830px) {
+  .back {
+    bottom: 30px;
+    right: 30px;
+  }
+  .table h3 {
+    font-size: 13px;
+  }
+  .table tr {
+    font-size: 10px;
+  }
+  .table button {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+  .table img {
+    width: 50px !important;
+    height: 27.5px !important;
+  }
+  .search-input {
+    font-size: 13px;
+    padding: 10px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 496px) {
+  .table button {
+    font-size: 9px;
+    padding: 3px 5px;
+    width: 50px;
+  }
+
+  .table h3 {
+    font-size: 12px;
+  }
+  .table tr {
+    font-size: 9px;
+  }
+
+  .table img {
+    width: 45px !important;
+    height: 22.5px !important;
+  }
+  .table td {
+    padding: 3px;
+  }
+  .covid-list-con {
+    padding: 3px;
+  }
 }

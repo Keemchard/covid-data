@@ -29,3 +29,12 @@
 .more-data-details {
   color: white;
 }
+
+@media only screen and (max-width: 550px) {
+  .more-main-con {
+    padding: 15px;
+  }
+  .more-data-con {
+    width: 100%;
+  }
+}

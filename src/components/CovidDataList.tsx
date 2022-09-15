@@ -66,7 +66,7 @@ const covidDataList = () => {
         <input
           className="search-input"
           type="text"
-          placeholder="Seatch Country"
+          placeholder="Search Country"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -92,7 +92,7 @@ const covidDataList = () => {
                 <h3>Last Update</h3>
               </th>
               <th>
-                <h3>MoOoOrE</h3>
+                <h3>More</h3>
               </th>
             </tr>
             {search(covidData).map((covid: any) => {
