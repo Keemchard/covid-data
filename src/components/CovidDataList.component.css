@@ -70,7 +70,7 @@ td {
   border: none;
   transition: 0.2s;
   background-color: #60d8f9;
-  border: px solid #20232a;
+  /* border: px solid #20232a; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
