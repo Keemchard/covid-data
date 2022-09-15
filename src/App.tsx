@@ -7,6 +7,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Infected from "./components/Infected";
 import Tested from "./components/Tested";
 import Recovered from "./components/Recovered";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
           <Route path="/tested" element={<Tested />} />
           <Route path="/recovered" element={<Recovered />} />
         </Routes>
+        <footer>
+          <Footer />
+        </footer>
       </BrowserRouter>
     </>
   );

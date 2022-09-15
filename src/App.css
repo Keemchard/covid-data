@@ -29,6 +29,11 @@ nav .menus ul {
   color: #61dafb;
 }
 
+footer {
+  margin-top: 5px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 500px) {
   .logo h1 {
     font-size: 20px;
