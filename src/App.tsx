@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 //components
 import CovidDataList from "./components/CovidDataList";

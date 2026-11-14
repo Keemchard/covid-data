@@ -1,29 +1,76 @@
 .card {
-  background-color: #20232a;
-  margin: 20px;
-  padding: 10px;
+  background-color: #fff;
+  padding: 20px 16px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 300px;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: 0.25s;
-  border-radius: 5px;
-  /* background-color: saddlebrown; */
+  border: 1px solid #d4cdc0;
+  border-radius: 6px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(45, 42, 36, 0.1);
 }
 
 .card img {
-  width: 200px;
-  height: 120px;
-  margin-bottom: 20px;
+  width: 140px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #d4cdc0;
+  margin-bottom: 12px;
 }
 
-.card h1 {
-  color: #61dafb;
+.flag-placeholder {
+  width: 140px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8e2d6;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #6b6459;
+  letter-spacing: 2px;
+}
+
+.card-country {
+  color: #2c3e2d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: center;
+  word-break: break-word;
+}
+
+.card-cases {
+  color: #6b6459;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    padding: 14px 10px 12px;
+  }
+  .card img {
+    width: 100px;
+    height: 60px;
+    margin-bottom: 8px;
+  }
+  .flag-placeholder {
+    width: 100px;
+    height: 60px;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .card-country {
+    font-size: 13px;
+  }
+  .card-cases {
+    font-size: 12px;
+  }
 }

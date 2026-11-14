@@ -1,15 +1,108 @@
 .main-infected {
-  height: 80vh;
-  overflow-y: scroll;
+  max-height: 70vh;
+  overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0 24px 16px;
 }
-
-/* .infected-card {
-  background-color: antiquewhite;
-} */
 
 .case-title {
   text-align: center;
-  margin: 20px 0;
+  margin: 24px 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e2d;
+}
+
+.card-filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 8px 24px 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-search {
+  flex: 1;
+  min-width: 140px;
+  padding: 8px 12px;
+  border: 1px solid #d4cdc0;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #2d2a24;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.card-search::placeholder {
+  color: #a09888;
+}
+
+.card-search:focus {
+  border-color: #5b8c5a;
+}
+
+.card-select {
+  padding: 8px 28px 8px 10px;
+  border: 1px solid #d4cdc0;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #2d2a24;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b6459' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.card-select:focus {
+  border-color: #5b8c5a;
+}
+
+.card-sort-btn {
+  padding: 8px 14px;
+  border: 1px solid #d4cdc0;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #2d2a24;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.card-sort-btn:hover {
+  background-color: #f7f4ee;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-infected {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0 12px 12px;
+  }
+  .case-title {
+    font-size: 18px;
+    margin: 16px 0 6px;
+  }
+  .card-filter-bar {
+    padding: 8px 12px 12px;
+    gap: 8px;
+  }
+  .card-search {
+    font-size: 13px;
+    min-width: 100px;
+  }
+  .card-select,
+  .card-sort-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
 }

@@ -1,17 +1,25 @@
 import React from "react";
-//styles
 import "./Card.component.css";
 
-const Card = ({ country, data }: any) => {
-  const flagUrl: string = "https://countryflagsapi.com/svg";
+const Card = ({ country, data, iso2 }: any) => {
+  const flagSrc = iso2
+    ? `https://flagcdn.com/w160/${iso2.toLowerCase()}.png`
+    : "";
+
   return (
-    <>
-      <div className="card">
-        <img src={`${flagUrl}/${country}`} alt={country} />
-        <h1>{country}</h1>
-        <div>Cases: {data}</div>
-      </div>
-    </>
+    <div className="card">
+      {flagSrc ? (
+        <img src={flagSrc} alt={country} />
+      ) : (
+        <div className="flag-placeholder">
+          {country.slice(0, 2).toUpperCase()}
+        </div>
+      )}
+      <h2 className="card-country">{country}</h2>
+      <p className="card-cases">
+        {data != null ? Number(data).toLocaleString() : "N/A"}
+      </p>
+    </div>
   );
 };
 

@@ -1,69 +1,63 @@
-import { read } from "fs";
 import React, { useEffect, useState } from "react";
-//styles
 import "./CovidDataSpecific.component.css";
 
-const CovidDataSpecific = ({ covidMoreDataUrl, covidCountryName }: any) => {
-  const [covidMoreData, setCovidMoreData] = useState({});
-  const flagUrl: string = "https://countryflagsapi.com/svg";
-
-  const getMoreCovidData = async () => {
-    const res = await fetch(covidMoreDataUrl);
-    const data = await res.json();
-    // console.log(data);
-    setCovidMoreData(data);
-  };
+const CovidDataSpecific = ({ covidCountryName }: any) => {
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    getMoreCovidData();
-  }, []);
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://disease.sh/v3/covid-19/countries/${encodeURIComponent(covidCountryName)}`
+      );
+      const json = await res.json();
+      setData(json);
+    };
+    fetchData();
+  }, [covidCountryName]);
 
-  const {
-    activeCases,
-    ICU,
-    deceased,
-    infected,
-    lastUpdateAtApify,
-    readMe,
-    recipients,
-    stable,
-    undercare,
-    recovered,
-    sourceUrl,
-    tested,
-  }: any = covidMoreData;
+  if (!data) {
+    return (
+      <div style={{ textAlign: "center", padding: "60px 0", color: "#6b6459" }}>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  const iso = data.countryInfo?.iso2;
+  const flagSrc = iso
+    ? `https://flagcdn.com/w320/${iso.toLowerCase()}.png`
+    : "";
 
   return (
-    <>
-      <div className="more-main-con">
-        <div className="more-data-con">
-          <div className="more-data-head">
+    <div className="more-main-con">
+      <div className="more-data-con">
+        <div className="more-data-head">
+          {flagSrc && (
             <img
               className="more-data-flag"
-              src={`${flagUrl}/${covidCountryName}`}
+              src={flagSrc}
               alt={covidCountryName}
             />
-            <h1 style={{ color: "#61DAFB", marginBottom: "20px" }}>
-              {covidCountryName}
-            </h1>
-          </div>
-          <div className="more-data-details">
-            <p>{`Active Cases: ${activeCases}`}</p>
-            <p>{`ICU: ${ICU}`}</p>
-            <p>{`Deceased: ${deceased}`}</p>
-            <p>{`Infected: ${infected}`}</p>
-            <p>{`Tested: ${tested}`}</p>
-            <p>{`Recovered: ${recovered}`}</p>
-            <p>{`Recipients: ${recipients}`}</p>
-            <p>{`Stable: ${stable}`}</p>
-            <p>{`underCare: ${undercare}`}</p>
-            <p>{`Latest update time: ${lastUpdateAtApify}`}</p>
-            <p>{`Read more: ${readMe}`}</p>
-            <p>{`Source Url: ${sourceUrl}`}</p>
-          </div>
+          )}
+          <h1>{data.country}</h1>
+          <span className="more-data-continent">{data.continent}</span>
+        </div>
+        <div className="more-data-details">
+          <p><span className="detail-label">Cases</span><span>{data.cases?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Today Cases</span><span>{data.todayCases?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Deaths</span><span>{data.deaths?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Today Deaths</span><span>{data.todayDeaths?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Recovered</span><span>{data.recovered?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Active</span><span>{data.active?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Critical</span><span>{data.critical?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Tests</span><span>{data.tests?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Population</span><span>{data.population?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Cases/1M</span><span>{data.casesPerOneMillion?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Deaths/1M</span><span>{data.deathsPerOneMillion?.toLocaleString()}</span></p>
+          <p><span className="detail-label">Tests/1M</span><span>{data.testsPerOneMillion?.toLocaleString()}</span></p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
